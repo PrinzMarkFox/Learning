@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28721.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "egyszamjatek_console", "egyszamjatek_console\egyszamjatek_console.csproj", "{6DB2319D-DAD1-4147-A9DD-6D91636D6438}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "egyszamjatek_graph", "egyszamjatek_graph\egyszamjatek_graph.csproj", "{EFDEADA3-FFB6-4750-B672-A84700688F74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DB2319D-DAD1-4147-A9DD-6D91636D6438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB2319D-DAD1-4147-A9DD-6D91636D6438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DB2319D-DAD1-4147-A9DD-6D91636D6438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB2319D-DAD1-4147-A9DD-6D91636D6438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFDEADA3-FFB6-4750-B672-A84700688F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFDEADA3-FFB6-4750-B672-A84700688F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFDEADA3-FFB6-4750-B672-A84700688F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFDEADA3-FFB6-4750-B672-A84700688F74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {840A3A67-7630-42E4-A866-B1D9C59F18ED}
+	EndGlobalSection
+EndGlobal
