@@ -9,7 +9,7 @@ namespace egyszamjatek_console
     {
         public static List<Player> GetPlayer()
         {
-            string filename = "egyszamjatek1.txt";
+            const string filename = "egyszamjatek1.txt";
             var lines = File.ReadAllLines(filename);
             var players = new List<Player>();
 
