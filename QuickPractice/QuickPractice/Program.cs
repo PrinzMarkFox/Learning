@@ -7,17 +7,22 @@ namespace QuickPractice
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(toUpperCaseEveryFirstLetter("ez egy teszt szöveg"));
+            Console.WriteLine(toUpperCaseEveryFirstLetter());
             Console.WriteLine();
-
-            int[] testArray = { 1, 3, 2, 2, 0, 7, 6, 9 };
-            Console.WriteLine(secondBiggestNumber(testArray)); 
+            Console.WriteLine("Your second biggest number is: " + secondBiggestNumber(getNumbers())); 
         }
 
-        private static string toUpperCaseEveryFirstLetter(string text)
+        private static string toUpperCaseEveryFirstLetter()
         {
-            const char separator = ' ';
-            var lowerCasewords = text.Split(separator);
+            Console.Write("Enter your text: ");
+            string text = Console.ReadLine();
+            Console.Clear();
+
+            Console.Write("Enter your separator character: ");
+            char separator = char.Parse(Console.ReadLine());
+            Console.Clear();
+
+            var lowerCasewords = text.Split(separator, StringSplitOptions.RemoveEmptyEntries);
             var upperCaseWords = new List<string>();
             string result = String.Empty;
 
@@ -32,6 +37,13 @@ namespace QuickPractice
 
         private static int secondBiggestNumber(int[] numbers)
         {
+            if (numbers == null)
+                throw new Exception("Your array is not initialized");
+            else if (numbers.Length == 0)
+                throw new Exception("Your array is empty. Does not contains any value.");
+            else if (numbers.Length == 1)
+                throw new Exception("Your array does contain only one value. Can not select the second biggest value");
+
             int result = 0;
             int maximum = 0;
 
@@ -44,6 +56,23 @@ namespace QuickPractice
                     result = numbers[i];
 
             return result;
+        }
+
+        private static int[] getNumbers()
+        {
+            Console.Write("Enter how many numbers you wish to work with: ");
+            int lenght = int.Parse(Console.ReadLine());
+            Console.Clear();
+
+            int[] numbers = new int[lenght];
+            for (int i = 0; i < lenght; i++)
+            {
+                Console.Write($"Enter the {i}. number: ");
+                numbers[i] = int.Parse(Console.ReadLine());
+                Console.Clear();
+            }
+
+            return numbers;
         }
     }
 }
