@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 
 namespace QuickPractice
 {
@@ -7,30 +9,18 @@ namespace QuickPractice
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(toUpperCaseEveryFirstLetter());
+
+            Console.WriteLine(toUpperCaseEveryFirstLetter("ez___itt_egy__teszt_______szöveg!"));
             Console.WriteLine();
-            Console.WriteLine("Your second biggest number is: " + secondBiggestNumber(getNumbers())); 
+
+            int[] numbers = { 1, 29, 3, 5, 1, 6, 9, 41, 2 };
+            Console.WriteLine("Your second biggest number is: " + secondBiggestNumber(numbers)); 
         }
 
-        private static string toUpperCaseEveryFirstLetter()
+        private static string toUpperCaseEveryFirstLetter(string text)
         {
-            Console.Write("Enter your text: ");
-            string text = Console.ReadLine();
-            Console.Clear();
-
-            Console.Write("Enter your separator character: ");
-            char separator = char.Parse(Console.ReadLine());
-            Console.Clear();
-
-            var lowerCasewords = text.Split(separator, StringSplitOptions.RemoveEmptyEntries);
-            var upperCaseWords = new List<string>();
-            string result = String.Empty;
-
-            foreach (var word in lowerCasewords)
-                upperCaseWords.Add(word.Substring(0, 1).ToUpper() + word.Substring(1, word.Length - 1).ToLower());
-
-            foreach (var properWords in upperCaseWords)
-                result += properWords + " ";
+            TextInfo textInfo = new CultureInfo("hu-HU", false).TextInfo;
+            string result = textInfo.ToTitleCase(text);
 
             return result;
         }
@@ -47,32 +37,20 @@ namespace QuickPractice
             int result = 0;
             int maximum = 0;
 
-            for (int i = 0; i < numbers.Length; i++)
-                if (maximum < numbers[i])
-                    maximum = numbers[i];
-
-            for (int i = 0; i < numbers.Length; i++)
-                if (numbers[i] != maximum && result < numbers[i])
-                    result = numbers[i];
-
-            return result;
-        }
-
-        private static int[] getNumbers()
-        {
-            Console.Write("Enter how many numbers you wish to work with: ");
-            int lenght = int.Parse(Console.ReadLine());
-            Console.Clear();
-
-            int[] numbers = new int[lenght];
-            for (int i = 0; i < lenght; i++)
+            foreach (var num in numbers)
             {
-                Console.Write($"Enter the {i}. number: ");
-                numbers[i] = int.Parse(Console.ReadLine());
-                Console.Clear();
+                if (num > maximum)
+                {
+                    result = maximum;
+                    maximum = num;
+                }
+                else if (num > result)
+                {
+                    result = num;
+                }
             }
 
-            return numbers;
+            return result;
         }
     }
 }
