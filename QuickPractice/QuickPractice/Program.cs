@@ -13,7 +13,7 @@ namespace QuickPractice
             Console.WriteLine(toUpperCaseEveryFirstLetter("ez___itt_egy__teszt_______szöveg!"));
             Console.WriteLine();
 
-            int[] numbers = { 1, 29, 3, 5, 1, 6, 9, 41, 2 };
+            int[] numbers = { 9,4,9 };
             Console.WriteLine("Your second largest number is: " + secondLargestNumber(numbers)); 
         }
 
@@ -34,6 +34,7 @@ namespace QuickPractice
             else if (numbers.Length == 1)
                 throw new Exception("Your array does contain only one value. Can not select the second largest value");
 
+            int helper = 0;
             int result = 0;
             int maximum = 0;
 
@@ -46,7 +47,12 @@ namespace QuickPractice
                 }
                 else if (num > result)
                 {
+                    helper = result;
                     result = num;
+                    if (result == maximum)
+                    {
+                        result = helper;
+                    }
                 }
             }
 
