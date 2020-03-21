@@ -14,7 +14,7 @@ namespace QuickPractice
             Console.WriteLine();
 
             int[] numbers = { 1, 29, 3, 5, 1, 6, 9, 41, 2 };
-            Console.WriteLine("Your second biggest number is: " + secondBiggestNumber(numbers)); 
+            Console.WriteLine("Your second largest number is: " + secondLargestNumber(numbers)); 
         }
 
         private static string toUpperCaseEveryFirstLetter(string text)
@@ -25,14 +25,14 @@ namespace QuickPractice
             return result;
         }
 
-        private static int secondBiggestNumber(int[] numbers)
+        private static int secondLargestNumber(int[] numbers)
         {
             if (numbers == null)
                 throw new Exception("Your array is not initialized");
             else if (numbers.Length == 0)
                 throw new Exception("Your array is empty. Does not contains any value.");
             else if (numbers.Length == 1)
-                throw new Exception("Your array does contain only one value. Can not select the second biggest value");
+                throw new Exception("Your array does contain only one value. Can not select the second largest value");
 
             int result = 0;
             int maximum = 0;
@@ -49,6 +49,9 @@ namespace QuickPractice
                     result = num;
                 }
             }
+
+            if (result == maximum)
+                throw new Exception("There is no second largest number.");
 
             return result;
         }
