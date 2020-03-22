@@ -6,11 +6,11 @@ namespace ExceptionPractice
     {
         static void Main(string[] args)
         {
-            var numbers = GetNumber();
+            var numbers = GetNumbers();
             Console.ReadKey();
         }
 
-        private static int[] GetNumber()
+        private static int[] GetNumbers()
         {
             int[] numbers = new int[5];
             int i = 0;
