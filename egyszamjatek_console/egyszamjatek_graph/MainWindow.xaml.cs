@@ -21,6 +21,7 @@ namespace egyszamjatek_graph
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const string filename = "egyszamjatek2.txt";
         List<string> players;
 
         public MainWindow()
@@ -43,6 +44,8 @@ namespace egyszamjatek_graph
         {
             string name = tbx_Name.Text;
             string tips = tbx_Tips.Text;
+            string[] actualTips = tbx_Tips.Text.Split(' ');
+            string result = String.Empty;
 
             if (players.Any(p => p.Split(' ')[0] == name))
             {
@@ -50,9 +53,15 @@ namespace egyszamjatek_graph
             }
             else
             {
-                if (players.First().Split(' ').Length - 1 != int.Parse(lb_Count.Content.ToString().Split(' ')[0]))
+                if (players.First().Split(' ').Length - 1 != int.Parse(lb_Count.Content.ToString().Split(' ')[0])) //Összeveti az első játékos számsorozatának hosszával a felhasználó által megadott számsorozat hosszával amit a 'label'-ből olvas ki.
                 {
-                    MessageBox.Show("asd");
+                    MessageBox.Show("A tippek száma nem megfelelő!");
+                }
+                else
+                {
+                    result = $"{name} {actualTips[0]} {actualTips[1]} {actualTips[2]} {actualTips[3]}";
+                    File.AppendAllText(filename, result + Environment.NewLine);
+                    MessageBox.Show("Az állomány bővítése sikeres volt!");
                 }
             }
         }
