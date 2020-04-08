@@ -113,18 +113,13 @@ namespace Tesztverseny
             var winners = new List<Winner>();
 
             int place = 1;
-            winners.Add(new Winner(result[0].Id, result[0].Points, place));
+            winners.Add(new Winner(result[0].Id, result[0].Points, place)); //Use while instead of for loop
             for (int i = 1; i < result.Count && place < 3; i++)
             {
                 if (result[i].Points != result[i - 1].Points)
-                {
                     place++;
-                    winners.Add(new Winner(result[i].Id, result[i].Points, place));
-                }
-                else
-                {
-                    winners.Add(new Winner(result[i].Id, result[i].Points, place));
-                }
+                
+                winners.Add(new Winner(result[i].Id, result[i].Points, place));
             }
             
             return winners;
