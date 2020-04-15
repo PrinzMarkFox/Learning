@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mountain_Climbing", "Mountain_Climbing\Mountain_Climbing.csproj", "{C8C51CEE-FAF0-4E45-A711-68A8461B98BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Játszma5", "Játszma5\Játszma5.csproj", "{4FBB22D3-ADD6-42B4-A377-BC60BB9778B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C8C51CEE-FAF0-4E45-A711-68A8461B98BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C8C51CEE-FAF0-4E45-A711-68A8461B98BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C8C51CEE-FAF0-4E45-A711-68A8461B98BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C8C51CEE-FAF0-4E45-A711-68A8461B98BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FBB22D3-ADD6-42B4-A377-BC60BB9778B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FBB22D3-ADD6-42B4-A377-BC60BB9778B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FBB22D3-ADD6-42B4-A377-BC60BB9778B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FBB22D3-ADD6-42B4-A377-BC60BB9778B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {24480C89-1A57-4F19-83FF-EB3FA725BFCB}
+		SolutionGuid = {4BA42B6A-DEA7-482C-9E69-193AAC3ACA57}
 	EndGlobalSection
 EndGlobal
